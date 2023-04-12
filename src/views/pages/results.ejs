@@ -1,0 +1,34 @@
+<%- include ('../partials/header') %>
+
+<div class="container">
+    <div class="container">
+        <h1><b>Results</b></h1>
+        <p>To add more results click <a href="/results/add">here</a>, to edit a team, click on the team id number</p>
+    </div>
+
+    <div class="container mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Team Name</th>
+                    <th>Track Name</th>
+                    <th>Time</th>
+                    <th>Laps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < results.length; i++) { %>
+                    <tr>
+                        <td><a href="/results/<%= results[i].result_id %>"><i><b><%= results[i].result_id %></b></i></a></td>
+                        <td><i><b><%= results[i].team_name %></b></i></td>
+                        <td><i><b><%= results[i].track_name %></b></i></td>
+                        <td><i><b><%= results[i].time %></b></i></td>
+                        <td><i><b><%= results[i].laps %></b></i></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include ('../partials/footer') %>

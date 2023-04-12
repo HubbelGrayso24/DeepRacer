@@ -1,0 +1,37 @@
+<%- include ('../partials/header') %>
+
+<div class="container">
+    <div class="container">
+        <h1><b>Results</b></h1>
+    </div>
+
+    <form action="/results/<%= results[i].result_id %>" method="POST">
+        <div class="form-group">
+            <select class="form-select" aria-label="Select team" name="teamid">
+                <option selected>Select Team</option>
+                <% for (let i = 0; i < teams.length; i++) { %>
+                    <option value="<%= teams[i].team_id %>"><%= teams[i].team_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+            <select class="form-select" aria-label="Select track" name="trackid">
+                <option selected>Select Track</option>
+                <% for (let i = 0; i < tracks.length; i++) { %>
+                    <option value="<%= tracks[i].track_id %>"><%= tracks[i].track_name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="text" class="form-control" id="time" name="time">
+        </div>
+        <div class="form-group">
+            <label for="laps">Laps</label>
+            <input type="text" class="form-control" id="laps" name="laps">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<%- include ('../partials/footer') %>

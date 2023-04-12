@@ -1,0 +1,41 @@
+<%- include ('../partials/header') %>
+
+<div class="container">
+    <a href="http://iclhs-deepracer.s3-website-us-east-1.amazonaws.com/"><img src="/src/resources/img/deepracerlogo.png"></a>
+    <div class="container mt-3">
+        <h1><b>DeepRacer Race Board</b></h1>
+    </div>
+
+    <div class="container mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Team Name</th>
+                    <th>Student1</th>
+                    <th>Student2</th>
+                    <th>Student3</th>
+                    <th>Oval</th>
+                    <th>Laps</th>
+                    <th>Monza</th>
+                    <th>Laps</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < teams.length; i++) { %>
+                    <tr>
+                        <td><i><b><%= teams[i].teamName %></b></i></td>
+                        <td><%= teams[i].student1 %></td>
+                        <td><%= teams[i].student2 %></td>
+                        <td><%= teams[i].student3 %></td>
+                        <td><i><b><%= track1FastestTimes[i].ovalTime %></b></i></td>
+                        <td><b><%= track1MostLaps[i].ovalLaps %></b></td>
+                        <td><b><i><%= track2FastestTimes[i].monzaTime %></i></b></td>
+                        <td><b><%= track2MostLaps[i].monzaLaps %></b></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<%- include ('../partials/footer') %>

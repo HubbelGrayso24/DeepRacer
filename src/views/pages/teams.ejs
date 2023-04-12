@@ -1,0 +1,41 @@
+<%- include ('../partials/header') %>
+
+<div class="container">
+
+    <div class="container">
+        <h1><b>DeepRacer Teams</b></h1>
+        <p>To add more teams click <a href="/teams/add">here</a>, to edit a team, click on the team id number</p>
+    </div>
+
+    <div class="container mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Team ID</th>
+                    <th>Team Name</th>
+                    <th>Student 1</th>
+                    <th>Student 2</th>
+                    <th>Student 3</th>
+                    <th>Car Number</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i = 0; i < teams.length; i++) { %>
+                    <tr>
+                        <td><a href="/teams/<%= teams[i].team_id %>"><%= teams[i].team_id %></a></td>
+                        <td><i><b><%= teams[i].team_name %></b></i></td>
+                        <td><%= teams[i].student1 %></td>
+                        <td><%= teams[i].student2 %></td>
+                        <td><%= teams[i].student3 %></td>
+                        <td><%= teams[i].car_number %></td>
+                        <td><a href="/teams/<%= teams[i].team_id %>/delete">Delete</a></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<%- include ('../partials/footer') %>

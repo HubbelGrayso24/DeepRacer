@@ -1,0 +1,52 @@
+<%- include ('../partials/header') %>
+
+<div class="container">
+    <div class="container">
+        <h1><b>Add Team</b></h1>
+    </div>
+
+    <div class="container">
+        <form action="/teams/add" method="POST">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Team Name</span>
+                <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" name="name" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">Student 1</span>
+                <input type="text" class="form-control" placeholder="Student 1" aria-label="Student 1" aria-describedby="basic-addon2" name="student1" required>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon3">Student 2</span>
+                <input type="text" class="form-control" placeholder="Student 2" aria-label="Student 2" aria-describedby="basic-addon3" name="student2">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon4">Student 3</span>
+                <input type="text" class="form-control" placeholder="Student 3" aria-label="Student 3" aria-describedby="basic-addon4" name="student3">
+            </div>
+            <div class="input-group mb-3">
+                <select class="form-select" aria-label="Default select example" name="carid">
+                    <option selected>Select Car</option>
+                    <option value="1">IC1</option>
+                    <option value="2">IC2</option>
+                    <option value="3">IC3</option>
+                    <option value="4">IC4</option>
+                    <option value="5">IC5</option>
+                    <option value="6">IC6</option>
+                    <option value="7">IC7</option>
+                    <option value="8">IC8</option>
+                    <option value="9">IC9</option>
+                    <option value="10">IC10</option>
+                    <option value="11">IC11</option>
+                    <option value="12">IC12</option>
+                    <option value="13">IC13</option>
+                    <option value="14">IC14</option>
+                    <option value="15">IC15</option>
+                    <option value="16">IC16</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%- include ('../partials/footer') %>

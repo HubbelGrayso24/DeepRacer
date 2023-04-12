@@ -1,0 +1,24 @@
+<%- include ('../partials/header') %>
+
+<div class="container">
+    
+        <div class="container">
+    
+            <h1><b>Delete Team</b></h1>
+    
+        </div>
+    
+        <div class="container mt-3">
+    
+            <p>Are you sure you want to delete team <%= team.team_name %>?</p>
+    
+            <form action="/teams/<%= team.team_id %>/delete" method="POST">
+    
+                <button type="submit" class="btn btn-danger">Delete</button>
+    
+            </form>
+    
+        </div>
+</div>
+
+<%- include ('../partials/footer') %>
